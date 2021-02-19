@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>功能2</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        section{
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            transform-style: preserve-3d;
+            perspective: 500px;
+            background: #333333;
+        }
+        section h1{
+            position: relative;
+            width: 100%;
+            text-align: center;
+            line-height: 100vh;
+            color: aliceblue;
+        }
+        .bgc{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .blocks{
+            width: 5vw;
+            height: 5vh;
+            display: block;
+            position: relative;
+            background: url(./images/bgc.jpg);
+            background-position: center;
+            background-attachment: fixed;
+            background-size: cover;
+            animation: dh 2s ease-in-out forwards;
+            animation-delay: 0.5s;
+        }
+
+        @keyframes dh{
+            0%{
+                transform: translateZ(0px);
+                background: url(./images/bgc.jpg);
+                background-position: center;
+                background-attachment: fixed;
+                background-size: cover;
+                box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+            }
+            100%{
+                transform: translateZ(2000px);
+                background: url(./images/bgc.jpg);
+                background-position: center;
+                background-attachment: fixed;
+                background-size: cover;
+                box-shadow: 0 5px 15px rgba(0, 0, 0, 0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <section>
+        <h1>动画</h1>
+        <div class="bgc">
+            <div class="blocks"></div>
+        </div>
+    </section>
+    <script>
+        const bgc = document.getElementsByClassName('bgc')[0];
+        const blocks = document.getElementsByClassName('blocks');
+
+        for(let i = 1; i < 400; i++){
+            bgc.innerHTML += "<div class='blocks'></div>";
+            const sj = Math.random() * 5;
+            blocks[i].style.animationDuration = 2 + sj + 's';
+            blocks[i].style.animationDelay = sj + 's';
+        }
+    </script>
+</html>

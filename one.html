@@ -14,6 +14,12 @@
             width: 100%;
             height: 500px;
         }
+
+        .al {
+            margin-top: 40px;
+            padding: 20px;
+            background: #e9ecef;
+        }
     </style>
 </head>
 
@@ -27,13 +33,13 @@
         <div class="collapse navbar-collapse" id="collapsibleNavbar">
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link" href="#">功能1</a>
+                    <a class="nav-link" href="item1.html">功能1</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">功能2</a>
+                    <a class="nav-link" href="item2.html">功能2</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">功能3</a>
+                    <a class="nav-link" href="item3.html">功能3</a>
                 </li>
             </ul>
         </div>
@@ -76,9 +82,66 @@
     </div>
 
     <!-- 内容 -->
-    <div style="text-align: center;">
-        暂时想不到要做什么，先这样吧 -- 达哥留
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+            <h1>欢迎访问</h1>
+            <p>没什么内容，先随便来几个句子算了！！！</p>
+        </div>
     </div>
+
+    <div class="container">
+        <p style="text-indent: 2em;">所谓有趣的灵魂，实际上就是这个人的信息密度和知识层面，都远高于你，并愿意俯下身去听你说那毫无营养的废话和你交流，提出一些你没有听过的观点，颠覆了你短浅的想象力及三观。
+        </p>
+        <p style="text-indent: 2em;">改正一个错误，是需要付出代价的。但只要是改正了，不管是多大的代价，其实都是最小的代价，你改得越晚，你付出的代价越大。</p>
+        <p style="text-indent: 2em;">日常发生的多数事情原本不带色彩。我们如何表达，便有了各自的世界。</p>
+        <p style="text-indent: 2em;">人生的旅程就是这样，用大把时间迷茫，在几个瞬间成长。</p>
+        <p style="text-indent: 2em;">自我管理的意志力很大程度上来自于自我尊重。而所谓的自我尊重就是知道自己什么事该做与不该做，能做与不能做，以及做好自己。</p>
+        <p style="text-indent: 2em;">人类就是这么奇怪，如果没有人同情，你就不会在乎伤口有多疼，如果没有人嘲笑，你就不会在乎伤疤有多难看，如果没有人比较，谁会知道什么是前途。</p>
+        <p style="text-indent: 2em;">多读点书，要不然你的三观是由你的亲朋好友决定的。</p>
+        <p style="text-indent: 2em;">
+            我们很少信任比我们好的人，这可太真实了。我们宁肯避免与他们往来。相反，最为经常的是我们对和我们相似，和我们有着共同弱点的人吐露心迹。因此，我们并不希望改掉我们的弱点，也不希望变得更好，只是希望在我们的道路上受到怜悯和鼓励。
+        </p>
+        <p style="text-indent: 2em;">我不幸是世界上最不快乐的那种人，没能力，却有上进心；没天赋，却有梦想；越努力，越难过。</p>
+    </div>
+
+    <!-- 页面底部 -->
+    <div class="al">
+        <div class="container">
+            <h2>关于我</h2>
+            <!-- 按钮：用于打开模态框 -->
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
+                了解详细
+            </button>
+
+            <!-- 模态框 -->
+            <div class="modal fade" id="myModal">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+
+                        <!-- 模态框头部 -->
+                        <div class="modal-header">
+                            <h4 class="modal-title">一些想说的话</h4>
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        </div>
+
+                        <!-- 模态框主体 -->
+                        <div class="modal-body">
+                            <pre>作者：达哥&#9;制作时间：2021年2月18日</pre>
+                        </div>
+
+                        <!-- 模态框底部 -->
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">关闭</button>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
 </body>
 
 </html>
