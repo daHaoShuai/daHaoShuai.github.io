@@ -161,7 +161,7 @@
     
     
         <span class="article-wordcount article-meta-item">
-            <i class="fas fa-file-word"></i>&nbsp;<span>424 字</span>
+            <i class="fas fa-file-word"></i>&nbsp;<span>421 字</span>
         </span>
     
     
@@ -193,7 +193,7 @@
 </ul>
 <blockquote>
 <p> <strong>加载驱动</strong></p>
- <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&gt;<span class="comment">//加载MySql8.0驱动</span></span><br><span class="line"> Class.forName(<span class="string">&quot;com.mysql.cj.jdbc.Driver&quot;</span>);</span><br><span class="line"> </span><br><span class="line"> <span class="comment">//加载MySql5.0驱动</span></span><br><span class="line"> Class.forName(<span class="string">&quot;com.mysql.jdbc.Driver&quot;</span>)</span><br></pre></td></tr></table></figure>
+ <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//加载MySql8.0驱动</span></span><br><span class="line">Class.forName(<span class="string">&quot;com.mysql.cj.jdbc.Driver&quot;</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">//加载MySql5.0驱动</span></span><br><span class="line">Class.forName(<span class="string">&quot;com.mysql.jdbc.Driver&quot;</span>)</span><br></pre></td></tr></table></figure>
 <p><strong>连接的url配置</strong></p>
  <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">  <span class="comment">//mysql8.0(8.0要配置时区不然连不上)</span></span><br><span class="line">   String url = <span class="string">&quot;jdbc:mysql://localhost:3306/要连接的数据库名字?characterEncoding=utf8&amp;useSSL=false&amp;serverTimezone=UTC&amp;rewriteBatchedStatements=true&quot;</span>;</span><br><span class="line"></span><br><span class="line">   <span class="comment">//mysql5.0</span></span><br><span class="line">String url = <span class="string">&quot;jdbc:mysql:/localhost:3306/要连接的数据库名字&quot;</span>;</span><br></pre></td></tr></table></figure>
 
