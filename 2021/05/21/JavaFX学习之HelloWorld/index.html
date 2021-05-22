@@ -9,7 +9,7 @@
     
     <title>
         
-            JavaFX学习之窗口常用方法 |
+            JavaFX学习之HelloWorld |
         
         Da的个人博客
     </title>
@@ -141,7 +141,7 @@
     <div class="article-content-container">
 
         <div class="article-title">
-            <span class="title-hover-animation">JavaFX学习之窗口常用方法</span>
+            <span class="title-hover-animation">JavaFX学习之HelloWorld</span>
         </div>
 
         
@@ -159,7 +159,7 @@
                     <div class="meta-info">
                         <div class="article-meta-info">
     <span class="article-date article-meta-item">
-        <i class="fas fa-edit"></i>&nbsp;2021-05-22 00:02:25
+        <i class="fas fa-edit"></i>&nbsp;2021-05-21 22:34:43
     </span>
     
     
@@ -167,12 +167,12 @@
     
     
         <span class="article-wordcount article-meta-item">
-            <i class="fas fa-file-word"></i>&nbsp;<span>547 字</span>
+            <i class="fas fa-file-word"></i>&nbsp;<span>245 字</span>
         </span>
     
     
         <span class="article-min2read article-meta-item">
-            <i class="fas fa-clock"></i>&nbsp;<span>2 分钟</span>
+            <i class="fas fa-clock"></i>&nbsp;<span>1 分钟</span>
         </span>
     
     
@@ -188,17 +188,19 @@
         
 
         <div class="article-content markdown-body">
-            <h1 id="窗口常用方法"><a href="#窗口常用方法" class="headerlink" title="窗口常用方法"></a>窗口常用方法</h1><h2 id="JavaFX的第二次接触"><a href="#JavaFX的第二次接触" class="headerlink" title="JavaFX的第二次接触"></a>JavaFX的第二次接触</h2><blockquote>
-<p>  一些操作窗口的常用方法  </p>
-<p>  primaryStage.setTitle(“Stage”);//窗口标题</p>
-<p>  primaryStage.setWidth(500);//设置宽度</p>
-<p>  primaryStage.setHeight(400);//设置高度</p>
-<p>  primaryStage.show();//显示窗口</p>
-<p>  primaryStage.setX(200);//设置窗口距屏幕左上角x轴的距离</p>
-<p>  primaryStage.setY(200);//设置窗口距屏幕左上角y轴的距离</p>
-<p>  等……</p>
+            <h1 id="JavaFX"><a href="#JavaFX" class="headerlink" title="JavaFX"></a>JavaFX</h1><p>JavaFX就是Java在编写图形界面程序的最新技术。</p>
+<h2 id="JavaFX的第一次体验"><a href="#JavaFX的第一次体验" class="headerlink" title="JavaFX的第一次体验"></a>JavaFX的第一次体验</h2><blockquote>
+<p> Hello World</p>
+<p> 建议使用Jdk1.8~10之间的版本，方便开发，不用自己导依赖，配置启动参数，我这里用的是Jdk1.8</p>
 </blockquote>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> javafx.application.Application;</span><br><span class="line"><span class="keyword">import</span> javafx.beans.value.ChangeListener;</span><br><span class="line"><span class="keyword">import</span> javafx.beans.value.ObservableValue;</span><br><span class="line"><span class="keyword">import</span> javafx.scene.Group;</span><br><span class="line"><span class="keyword">import</span> javafx.scene.Scene;</span><br><span class="line"><span class="keyword">import</span> javafx.scene.image.Image;</span><br><span class="line"><span class="keyword">import</span> javafx.stage.Stage;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Main</span> <span class="keyword">extends</span> <span class="title">Application</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        launch(args);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">start</span><span class="params">(Stage primaryStage)</span> <span class="keyword">throws</span> Exception </span>&#123;</span><br><span class="line"></span><br><span class="line">        primaryStage.setTitle(<span class="string">&quot;Stage&quot;</span>);<span class="comment">//窗口标题</span></span><br><span class="line"></span><br><span class="line">        primaryStage.getIcons().add(<span class="keyword">new</span> Image(<span class="string">&quot;org/javafx/lesson2/icon/fz.png&quot;</span>));<span class="comment">//窗口图标</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//        primaryStage.setIconified(true);//设置启动窗口之后直接最小化</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//        primaryStage.setMaximized(true);//设置启动窗口之后直接最大化</span></span><br><span class="line"></span><br><span class="line">        primaryStage.setWidth(<span class="number">500</span>);<span class="comment">//设置宽度</span></span><br><span class="line">        primaryStage.setHeight(<span class="number">400</span>);<span class="comment">//设置高度</span></span><br><span class="line"><span class="comment">//</span></span><br><span class="line"><span class="comment">//        primaryStage.setMaxWidth(800);//设置最大宽度</span></span><br><span class="line"><span class="comment">//        primaryStage.setMaxHeight(500);//设置最大高度</span></span><br><span class="line"><span class="comment">//</span></span><br><span class="line"><span class="comment">//        primaryStage.setMinWidth(300);//设置最小宽度</span></span><br><span class="line"><span class="comment">//        primaryStage.setMinHeight(200);//设置最小高度</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//        primaryStage.setResizable(false);//不允许拉伸窗口</span></span><br><span class="line"></span><br><span class="line">        primaryStage.setOpacity(<span class="number">0.5</span>);<span class="comment">//设置窗口透明度</span></span><br><span class="line">        </span><br><span class="line"><span class="comment">//        primaryStage.setAlwaysOnTop(false);//设置窗口是否置顶,false是不置顶</span></span><br><span class="line"></span><br><span class="line">        primaryStage.setX(<span class="number">200</span>);<span class="comment">//设置窗口距屏幕左上角x轴的距离</span></span><br><span class="line"></span><br><span class="line">        primaryStage.setY(<span class="number">200</span>);<span class="comment">//设置窗口距屏幕左上角y轴的距离</span></span><br><span class="line"></span><br><span class="line">        primaryStage.show();<span class="comment">//显示窗口</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//        要在窗口显示后获取,不然获取不到</span></span><br><span class="line"><span class="comment">//       System.out.println(&quot;宽度: &quot; + primaryStage.getWidth());</span></span><br><span class="line"><span class="comment">//        System.out.println(&quot;高度: &quot; + primaryStage.getHeight());</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//        监听宽度变化</span></span><br><span class="line">        primaryStage.widthProperty().addListener(<span class="keyword">new</span> ChangeListener&lt;Number&gt;() &#123;</span><br><span class="line">            <span class="meta">@Override</span></span><br><span class="line">            <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">changed</span><span class="params">(ObservableValue&lt;? extends Number&gt; observable, Number oldValue, Number newValue)</span> </span>&#123;</span><br><span class="line">                System.out.println(<span class="string">&quot;当前宽度: &quot;</span> + newValue.doubleValue());</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">//        监听高度变化</span></span><br><span class="line">        primaryStage.heightProperty().addListener(<span class="keyword">new</span> ChangeListener&lt;Number&gt;() &#123;</span><br><span class="line">            <span class="meta">@Override</span></span><br><span class="line">            <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">changed</span><span class="params">(ObservableValue&lt;? extends Number&gt; observable, Number oldValue, Number newValue)</span> </span>&#123;</span><br><span class="line">                System.out.println(<span class="string">&quot;当前高度: &quot;</span> + newValue.doubleValue());</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">//        监听X轴坐标</span></span><br><span class="line">        primaryStage.xProperty().addListener(<span class="keyword">new</span> ChangeListener&lt;Number&gt;() &#123;</span><br><span class="line">            <span class="meta">@Override</span></span><br><span class="line">            <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">changed</span><span class="params">(ObservableValue&lt;? extends Number&gt; observable, Number oldValue, Number newValue)</span> </span>&#123;</span><br><span class="line">                System.out.println(<span class="string">&quot;当前X坐标: &quot;</span> + newValue.doubleValue());</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">//        监听Y轴坐标</span></span><br><span class="line">        primaryStage.yProperty().addListener((observable, oldValue, newValue) -&gt; &#123;</span><br><span class="line">            System.out.println(<span class="string">&quot;当前Y坐标: &quot;</span> + newValue.doubleValue());</span><br><span class="line">        &#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">//        primaryStage.setFullScreen(true);//设置全屏,必须设置Scene</span></span><br><span class="line"><span class="comment">//        primaryStage.setScene(new Scene(new Group()));</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//        primaryStage.close();//关闭窗口</span></span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> javafx.application.Application;</span><br><span class="line"><span class="keyword">import</span> javafx.stage.Stage;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Main</span> <span class="keyword">extends</span> <span class="title">Application</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        launch(args);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">start</span><span class="params">(Stage primaryStage)</span> <span class="keyword">throws</span> Exception </span>&#123;</span><br><span class="line">        primaryStage.setTitle(<span class="string">&quot;Hello World&quot;</span>);<span class="comment">//设置窗口标题</span></span><br><span class="line">        primaryStage.show();<span class="comment">//显示窗口</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<blockquote>
+<p> JavaFX的生命周期的简单介绍</p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> javafx.application.Application;</span><br><span class="line"><span class="keyword">import</span> javafx.stage.Stage;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Main1</span> <span class="keyword">extends</span> <span class="title">Application</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;main() =&gt; &quot;</span> + Thread.currentThread().getName());<span class="comment">//main线程</span></span><br><span class="line">        launch(args);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">init</span><span class="params">()</span> <span class="keyword">throws</span> Exception </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;init() =&gt; &quot;</span> + Thread.currentThread().getName());<span class="comment">//初始化 JavaFX-Launcher线程</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">start</span><span class="params">(Stage primaryStage)</span> <span class="keyword">throws</span> Exception </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;start() =&gt; &quot;</span> + Thread.currentThread().getName());<span class="comment">//运行中 JavaFX Application Thread线程</span></span><br><span class="line">        primaryStage.show();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">stop</span><span class="params">()</span> <span class="keyword">throws</span> Exception </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;stop() =&gt; &quot;</span> + Thread.currentThread().getName());<span class="comment">//销毁 JavaFX Application Thread线程</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 
         </div>
@@ -207,11 +209,11 @@
             <div class="post-copyright-info">
                 <div class="article-copyright-info-container">
     <ul>
-        <li>本文标题：JavaFX学习之窗口常用方法</li>
+        <li>本文标题：JavaFX学习之HelloWorld</li>
         <li>本文作者：Da</li>
-        <li>创建时间：2021-05-22 00:02:25</li>
+        <li>创建时间：2021-05-21 22:34:43</li>
         <li>
-            本文链接：https://da9527.gitee.io/2021/05/22/JavaFX学习之窗口常用方法/
+            本文链接：https://da9527.gitee.io/2021/05/21/JavaFX学习之HelloWorld/
         </li>
         <li>
             版权声明：本博客所有文章除特别声明外，均采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> 许可协议。转载请注明出处！
@@ -228,13 +230,13 @@
                     <div class="article-prev">
                         <a class="prev"
                            rel="prev"
-                           href="/2021/05/22/JavaFX%E5%AD%A6%E4%B9%A0%E4%B9%8B%E7%AA%97%E5%8F%A3%E5%B8%B8%E7%94%A8%E6%96%B9%E6%B3%95%E4%BA%8C/"
+                           href="/2021/05/22/JavaFX%E5%AD%A6%E4%B9%A0%E4%B9%8B%E7%AA%97%E5%8F%A3%E5%B8%B8%E7%94%A8%E6%96%B9%E6%B3%95/"
                         >
                             <span class="left arrow-icon flex-center">
                               <i class="fas fa-chevron-left"></i>
                             </span>
                             <span class="title flex-center">
-                                <span class="post-nav-title-item">JavaFX学习之窗口常用方法二</span>
+                                <span class="post-nav-title-item">JavaFX学习之窗口常用方法</span>
                                 <span class="post-nav-item">上一篇</span>
                             </span>
                         </a>
@@ -244,10 +246,10 @@
                     <div class="article-next">
                         <a class="next"
                            rel="next"
-                           href="/2021/05/21/JavaFX%E5%AD%A6%E4%B9%A0%E4%B9%8BHelloWorld/"
+                           href="/2021/05/15/java%E5%AE%9A%E6%97%B6%E4%BB%BB%E5%8A%A1/"
                         >
                             <span class="title flex-center">
-                                <span class="post-nav-title-item">JavaFX学习之HelloWorld</span>
+                                <span class="post-nav-title-item">java定时任务</span>
                                 <span class="post-nav-item">下一篇</span>
                             </span>
                             <span class="right arrow-icon flex-center">
@@ -370,7 +372,7 @@
         <aside class="page-aside">
             <div class="post-toc-wrap">
     <div class="post-toc">
-        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%AA%97%E5%8F%A3%E5%B8%B8%E7%94%A8%E6%96%B9%E6%B3%95"><span class="nav-text">窗口常用方法</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#JavaFX%E7%9A%84%E7%AC%AC%E4%BA%8C%E6%AC%A1%E6%8E%A5%E8%A7%A6"><span class="nav-text">JavaFX的第二次接触</span></a></li></ol></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#JavaFX"><span class="nav-text">JavaFX</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#JavaFX%E7%9A%84%E7%AC%AC%E4%B8%80%E6%AC%A1%E4%BD%93%E9%AA%8C"><span class="nav-text">JavaFX的第一次体验</span></a></li></ol></li></ol>
     </div>
 </div>
         </aside>
