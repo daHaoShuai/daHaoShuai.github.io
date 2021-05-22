@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="keywords" content="Hexo Theme Keep">
+    <meta name="description" content="Hexo Theme Keep">
+    <meta name="author" content="Da">
+    
+    <title>
+        
+            JavaFX学习之布局一 |
+        
+        Da的个人博客
+    </title>
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <link rel="shortcut icon" href="/images/logo.svg">
+    
+<link rel="stylesheet" href="/css/font-awesome.min.css">
+
+    <script id="hexo-configurations">
+    let KEEP = window.KEEP || {};
+    KEEP.hexo_config = {"hostname":"da9527.gitee.io","root":"/","language":"zh-CN","path":"search.json"};
+    KEEP.theme_config = {"toc":{"enable":true,"number":false,"expand_all":false,"init_open":false},"style":{"primary_color":"#CC0000","avatar":"/images/avatar.svg","favicon":"/images/logo.svg","article_img_align":"left","left_side_width":"260px","content_max_width":"920px","hover":{"shadow":true,"scale":true},"first_screen":{"enable":true,"background_img":"/images/bg.svg","description":"我不怕千万人阻挡,只怕自己投降"},"scroll":{"progress_bar":{"enable":false},"percent":{"enable":false}}},"local_search":{"enable":true,"preload":false},"code_copy":{"enable":true,"style":"default"},"pjax":{"enable":true},"lazyload":{"enable":true},"version":"3.4.2"};
+    KEEP.language_ago = {"second":"%s 秒前","minute":"%s 分钟前","hour":"%s 小时前","day":"%s 天前","week":"%s 周前","month":"%s 月前","year":"%s 年前"};
+  </script>
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+
+<body>
+<div class="progress-bar-container">
+    
+
+    
+        <span class="pjax-progress-bar"></span>
+        <span class="pjax-progress-icon">
+            <i class="fas fa-circle-notch fa-spin"></i>
+        </span>
+    
+</div>
+
+
+<main class="page-container">
+
+    
+
+    <div class="page-main-content">
+
+        <div class="page-main-content-top">
+            <header class="header-wrapper">
+
+    <div class="header-content">
+        <div class="left">
+            <a class="logo-title" href="/">
+                Da的个人博客
+            </a>
+        </div>
+
+        <div class="right">
+            <div class="pc">
+                <ul class="menu-list">
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/"
+                            >
+                                首页
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/archives"
+                            >
+                                归档
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/about"
+                            >
+                                关于
+                            </a>
+                        </li>
+                    
+                    
+                        <li class="menu-item search search-popup-trigger">
+                            <i class="fas fa-search"></i>
+                        </li>
+                    
+                </ul>
+            </div>
+            <div class="mobile">
+                
+                    <div class="icon-item search search-popup-trigger"><i class="fas fa-search"></i></div>
+                
+                <div class="icon-item menu-bar">
+                    <div class="menu-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="header-drawer">
+        <ul class="drawer-menu-list">
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/">首页</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/archives">归档</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/about">关于</a>
+                </li>
+            
+        </ul>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="page-main-content-middle">
+
+            <div class="main-content">
+
+                
+                    <div class="fade-in-down-animation">
+    <div class="article-content-container">
+
+        <div class="article-title">
+            <span class="title-hover-animation">JavaFX学习之布局一</span>
+        </div>
+
+        
+            <div class="article-header">
+                <div class="avatar">
+                    <img src="/images/avatar.svg">
+                </div>
+                <div class="info">
+                    <div class="author">
+                        <span class="name">Da</span>
+                        
+                            <span class="author-label">Lv3</span>
+                        
+                    </div>
+                    <div class="meta-info">
+                        <div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        <i class="fas fa-edit"></i>&nbsp;2021-05-22 19:12:01
+    </span>
+    
+    
+
+    
+    
+        <span class="article-wordcount article-meta-item">
+            <i class="fas fa-file-word"></i>&nbsp;<span>1.5k 字</span>
+        </span>
+    
+    
+        <span class="article-min2read article-meta-item">
+            <i class="fas fa-clock"></i>&nbsp;<span>8 分钟</span>
+        </span>
+    
+    
+        <span class="article-pv article-meta-item">
+            <i class="fas fa-eye"></i>&nbsp;<span id="busuanzi_value_page_pv"></span>
+        </span>
+    
+</div>
+
+                    </div>
+                </div>
+            </div>
+        
+
+        <div class="article-content markdown-body">
+            <h1 id="JavaFX的第九次接触"><a href="#JavaFX的第九次接触" class="headerlink" title="JavaFX的第九次接触"></a>JavaFX的第九次接触</h1><blockquote>
+<p> AnchorPane布局</p>
+<p> HBox和VBox布局</p>
+<p> BorderPane布局</p>
+<p> FlowPane布局</p>
+<p> GridPane布局</p>
+</blockquote>
+<p><strong>AnchorPane    定位布局</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> javafx.application.Application;</span><br><span class="line"><span class="keyword">import</span> javafx.beans.value.ChangeListener;</span><br><span class="line"><span class="keyword">import</span> javafx.beans.value.ObservableValue;</span><br><span class="line"><span class="keyword">import</span> javafx.geometry.Insets;</span><br><span class="line"><span class="keyword">import</span> javafx.scene.Scene;</span><br><span class="line"><span class="keyword">import</span> javafx.scene.control.Button;</span><br><span class="line"><span class="keyword">import</span> javafx.scene.layout.AnchorPane;</span><br><span class="line"><span class="keyword">import</span> javafx.stage.Stage;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Main</span> <span class="keyword">extends</span> <span class="title">Application</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        launch(args);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">start</span><span class="params">(Stage primaryStage)</span> <span class="keyword">throws</span> Exception </span>&#123;</span><br><span class="line">        Button b1 = <span class="keyword">new</span> Button(<span class="string">&quot;b1&quot;</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">//        定位布局</span></span><br><span class="line">        AnchorPane ap1 = <span class="keyword">new</span> AnchorPane();</span><br><span class="line">        AnchorPane ap2 = <span class="keyword">new</span> AnchorPane();<span class="comment">//默认是没有宽和高的,可以自定义宽高,这里通过父组件设置</span></span><br><span class="line">        ap1.setStyle(<span class="string">&quot;-fx-background-color: #567;&quot;</span>);</span><br><span class="line">        ap2.setStyle(<span class="string">&quot;-fx-background-color: #2ecc71;&quot;</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">//        直接设置b1的位置和坐标是没用的,需要通过b1的父组件ap1来控制</span></span><br><span class="line"><span class="comment">//        ap1.setPadding(new Insets(10));//设置padding 10,下面的参数设置了才能看出来</span></span><br><span class="line"><span class="comment">//        AnchorPane.setTopAnchor(b1,10.0);</span></span><br><span class="line"><span class="comment">//        AnchorPane.setLeftAnchor(b1,10.0);</span></span><br><span class="line"><span class="comment">//        AnchorPane.setBottomAnchor(b1,10.0);</span></span><br><span class="line"><span class="comment">//        AnchorPane.setRightAnchor(b1,10.0);</span></span><br><span class="line"></span><br><span class="line">        ap1.getChildren().addAll(ap2);</span><br><span class="line">        ap2.getChildren().add(b1);</span><br><span class="line"><span class="comment">//        设置b1按钮相对于其父控件ap2的位置</span></span><br><span class="line">        AnchorPane.setRightAnchor(b1,<span class="number">0.0</span>);</span><br><span class="line">        AnchorPane.setBottomAnchor(b1,<span class="number">0.0</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">//        b1.setManaged(false);//设置b1脱离父控件,相当于消失了</span></span><br><span class="line">        b1.setVisible(<span class="keyword">false</span>);<span class="comment">//设置b1是否可见,false为不可见,布局上还有b1但是看不见</span></span><br><span class="line">        b1.setOpacity(<span class="number">0.5</span>);<span class="comment">//透明度</span></span><br><span class="line"></span><br><span class="line">        Scene scene = <span class="keyword">new</span> Scene(ap1);</span><br><span class="line"></span><br><span class="line">        primaryStage.setScene(scene);</span><br><span class="line">        primaryStage.setTitle(<span class="string">&quot;javafx&quot;</span>);</span><br><span class="line">        primaryStage.setWidth(<span class="number">800</span>);</span><br><span class="line">        primaryStage.setHeight(<span class="number">600</span>);</span><br><span class="line">        primaryStage.show();</span><br><span class="line"></span><br><span class="line"><span class="comment">//        设置ap2的位置、大小</span></span><br><span class="line">        AnchorPane.setTopAnchor(ap2, <span class="number">0.0</span>);</span><br><span class="line">        AnchorPane.setLeftAnchor(ap2, <span class="number">0.0</span>);</span><br><span class="line">        AnchorPane.setRightAnchor(ap2,ap1.getWidth() / <span class="number">2</span>);</span><br><span class="line">        AnchorPane.setBottomAnchor(ap2,ap1.getHeight() / <span class="number">2</span>);</span><br><span class="line"><span class="comment">//        动态改变ap2的宽高,要在窗口show方法后面监听,不然获取不到</span></span><br><span class="line"><span class="comment">//        lambda写法</span></span><br><span class="line">        primaryStage.widthProperty().addListener((o, oldV, newV) -&gt; &#123;</span><br><span class="line">            AnchorPane.setRightAnchor(ap2,ap1.getWidth() / <span class="number">2</span>);</span><br><span class="line">        &#125;);</span><br><span class="line"><span class="comment">//        普通写法</span></span><br><span class="line">        primaryStage.heightProperty().addListener(<span class="keyword">new</span> ChangeListener&lt;Number&gt;() &#123;</span><br><span class="line">            <span class="meta">@Override</span></span><br><span class="line">            <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">changed</span><span class="params">(ObservableValue&lt;? extends Number&gt; observable, Number oldValue, Number newValue)</span> </span>&#123;</span><br><span class="line">                AnchorPane.setBottomAnchor(ap2,ap1.getHeight() / <span class="number">2</span>);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<p><strong>HBox和VBox布局</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> javafx.application.Application;</span><br><span class="line"><span class="keyword">import</span> javafx.geometry.Insets;</span><br><span class="line"><span class="keyword">import</span> javafx.geometry.Pos;</span><br><span class="line"><span class="keyword">import</span> javafx.scene.Scene;</span><br><span class="line"><span class="keyword">import</span> javafx.scene.control.Button;</span><br><span class="line"><span class="keyword">import</span> javafx.scene.layout.AnchorPane;</span><br><span class="line"><span class="keyword">import</span> javafx.scene.layout.HBox;</span><br><span class="line"><span class="keyword">import</span> javafx.scene.layout.VBox;</span><br><span class="line"><span class="keyword">import</span> javafx.stage.Stage;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Main1</span> <span class="keyword">extends</span> <span class="title">Application</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        launch(args);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">start</span><span class="params">(Stage primaryStage)</span> <span class="keyword">throws</span> Exception </span>&#123;</span><br><span class="line">        Button b1 = <span class="keyword">new</span> Button(<span class="string">&quot;b1&quot;</span>);</span><br><span class="line">        Button b2 = <span class="keyword">new</span> Button(<span class="string">&quot;b2&quot;</span>);</span><br><span class="line">        Button b3 = <span class="keyword">new</span> Button(<span class="string">&quot;b3&quot;</span>);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        AnchorPane ap = <span class="keyword">new</span> AnchorPane();</span><br><span class="line">        ap.setStyle(<span class="string">&quot;-fx-background-color: #567;&quot;</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">//        HBox box = new HBox();//水平排列,超出局范围也不会换行</span></span><br><span class="line">        VBox box = <span class="keyword">new</span> VBox();<span class="comment">//垂直排列,超出布局范围也不会换行</span></span><br><span class="line">        box.setPrefWidth(<span class="number">500</span>);</span><br><span class="line">        box.setPrefHeight(<span class="number">300</span>);</span><br><span class="line">        box.setPadding(<span class="keyword">new</span> Insets(<span class="number">10</span>));<span class="comment">//设置padding</span></span><br><span class="line">        box.setSpacing(<span class="number">10</span>);<span class="comment">//设置全部子组件外边距</span></span><br><span class="line">        VBox.setMargin(b1,<span class="keyword">new</span> Insets(<span class="number">10</span>));<span class="comment">//单独设置子组件的margin</span></span><br><span class="line">        box.setAlignment(Pos.CENTER);<span class="comment">//设置全部子组件的对齐方式</span></span><br><span class="line">        box.setStyle(<span class="string">&quot;-fx-background-color: #123;&quot;</span>);</span><br><span class="line">        box.getChildren().addAll(b1,b2,b3);</span><br><span class="line"></span><br><span class="line">        ap.getChildren().add(box);</span><br><span class="line"></span><br><span class="line">        Scene scene = <span class="keyword">new</span> Scene(ap);</span><br><span class="line"></span><br><span class="line">        primaryStage.setScene(scene);</span><br><span class="line">        primaryStage.setTitle(<span class="string">&quot;javafx&quot;</span>);</span><br><span class="line">        primaryStage.setWidth(<span class="number">800</span>);</span><br><span class="line">        primaryStage.setHeight(<span class="number">600</span>);</span><br><span class="line">        primaryStage.show();</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>BorderPane    方位布局</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> javafx.application.Application;</span><br><span class="line"><span class="keyword">import</span> javafx.geometry.Insets;</span><br><span class="line"><span class="keyword">import</span> javafx.scene.Node;</span><br><span class="line"><span class="keyword">import</span> javafx.scene.Scene;</span><br><span class="line"><span class="keyword">import</span> javafx.scene.layout.AnchorPane;</span><br><span class="line"><span class="keyword">import</span> javafx.scene.layout.BorderPane;</span><br><span class="line"><span class="keyword">import</span> javafx.stage.Stage;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Main2</span> <span class="keyword">extends</span> <span class="title">Application</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        launch(args);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">start</span><span class="params">(Stage stage)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line"><span class="comment">//        5个区域,如果不设置宽和高默认会让中间的区域占满</span></span><br><span class="line">        AnchorPane ap1 = <span class="keyword">new</span> AnchorPane();</span><br><span class="line">        ap1.setStyle(<span class="string">&quot;-fx-background-color: #567;&quot;</span>);</span><br><span class="line">        ap1.setPrefHeight(<span class="number">100</span>);</span><br><span class="line">        ap1.setPrefWidth(<span class="number">100</span>);</span><br><span class="line">        AnchorPane ap2 = <span class="keyword">new</span> AnchorPane();</span><br><span class="line">        ap2.setStyle(<span class="string">&quot;-fx-background-color: #1abc9c;&quot;</span>);</span><br><span class="line">        ap2.setPrefHeight(<span class="number">100</span>);</span><br><span class="line">        ap2.setPrefWidth(<span class="number">100</span>);</span><br><span class="line">        AnchorPane ap3 = <span class="keyword">new</span> AnchorPane();</span><br><span class="line">        ap3.setStyle(<span class="string">&quot;-fx-background-color: #3498db;&quot;</span>);</span><br><span class="line">        ap3.setPrefHeight(<span class="number">100</span>);</span><br><span class="line">        ap3.setPrefWidth(<span class="number">100</span>);</span><br><span class="line">        AnchorPane ap4 = <span class="keyword">new</span> AnchorPane();</span><br><span class="line">        ap4.setStyle(<span class="string">&quot;-fx-background-color: #8e44ad;&quot;</span>);</span><br><span class="line">        ap4.setPrefHeight(<span class="number">100</span>);</span><br><span class="line">        ap4.setPrefWidth(<span class="number">100</span>);</span><br><span class="line">        AnchorPane ap5 = <span class="keyword">new</span> AnchorPane();</span><br><span class="line">        ap5.setStyle(<span class="string">&quot;-fx-background-color: #c0392b;&quot;</span>);</span><br><span class="line">        ap5.setPrefHeight(<span class="number">100</span>);</span><br><span class="line">        ap5.setPrefWidth(<span class="number">100</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">//        方位布局</span></span><br><span class="line">        BorderPane bp = <span class="keyword">new</span> BorderPane();</span><br><span class="line">        bp.setStyle(<span class="string">&quot;-fx-background-color: yellow;&quot;</span>);</span><br><span class="line"><span class="comment">//        设置各个布局的位置</span></span><br><span class="line">        bp.setTop(ap1);</span><br><span class="line">        bp.setRight(ap2);</span><br><span class="line">        bp.setBottom(ap3);</span><br><span class="line">        bp.setLeft(ap4);</span><br><span class="line">        bp.setCenter(ap5);</span><br><span class="line">        bp.setPadding(<span class="keyword">new</span> Insets(<span class="number">10</span>));<span class="comment">//设置补白</span></span><br><span class="line">        BorderPane.setMargin(ap1,<span class="keyword">new</span> Insets(<span class="number">10</span>));<span class="comment">//设置某个布局的外边距</span></span><br><span class="line"></span><br><span class="line">        AnchorPane top = (AnchorPane) bp.getTop();<span class="comment">//获取某个方位上的节点</span></span><br><span class="line">        System.out.println(top);</span><br><span class="line"></span><br><span class="line">        Scene scene = <span class="keyword">new</span> Scene(bp);</span><br><span class="line"></span><br><span class="line">        stage.setScene(scene);</span><br><span class="line"></span><br><span class="line">        stage.setTitle(<span class="string">&quot;javafx&quot;</span>);</span><br><span class="line">        stage.setWidth(<span class="number">600</span>);</span><br><span class="line">        stage.setHeight(<span class="number">600</span>);</span><br><span class="line">        stage.show();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>FlowPane    流式布局</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> javafx.application.Application;</span><br><span class="line"><span class="keyword">import</span> javafx.geometry.Insets;</span><br><span class="line"><span class="keyword">import</span> javafx.geometry.Orientation;</span><br><span class="line"><span class="keyword">import</span> javafx.geometry.Pos;</span><br><span class="line"><span class="keyword">import</span> javafx.scene.Scene;</span><br><span class="line"><span class="keyword">import</span> javafx.scene.control.Button;</span><br><span class="line"><span class="keyword">import</span> javafx.scene.layout.FlowPane;</span><br><span class="line"><span class="keyword">import</span> javafx.stage.Stage;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Main3</span> <span class="keyword">extends</span> <span class="title">Application</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        launch(args);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">start</span><span class="params">(Stage s)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">        Button b1 = <span class="keyword">new</span> Button(<span class="string">&quot;b1&quot;</span>);</span><br><span class="line">        Button b2 = <span class="keyword">new</span> Button(<span class="string">&quot;b2&quot;</span>);</span><br><span class="line">        Button b3 = <span class="keyword">new</span> Button(<span class="string">&quot;b3&quot;</span>);</span><br><span class="line">        Button b4 = <span class="keyword">new</span> Button(<span class="string">&quot;b4&quot;</span>);</span><br><span class="line">        Button b5 = <span class="keyword">new</span> Button(<span class="string">&quot;b5&quot;</span>);</span><br><span class="line">        Button b6 = <span class="keyword">new</span> Button(<span class="string">&quot;b6&quot;</span>);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">//        流式布局,会自动换行</span></span><br><span class="line">        FlowPane fp = <span class="keyword">new</span> FlowPane();</span><br><span class="line">        fp.setStyle(<span class="string">&quot;-fx-background-color: #567;&quot;</span>);</span><br><span class="line">        fp.setPadding(<span class="keyword">new</span> Insets(<span class="number">10</span>));<span class="comment">//设置补白</span></span><br><span class="line"><span class="comment">//        FlowPane.setMargin(b1,new Insets(10));//设置某个组件的外边距</span></span><br><span class="line">        fp.setAlignment(Pos.CENTER);<span class="comment">//设置子组件对齐方式</span></span><br><span class="line">        fp.setHgap(<span class="number">10</span>);<span class="comment">//子组件水平间距</span></span><br><span class="line">        fp.setVgap(<span class="number">10</span>);<span class="comment">//子组件垂直间距</span></span><br><span class="line">        fp.setOrientation(Orientation.VERTICAL);<span class="comment">//设置子组件默认是水平还是垂直排列</span></span><br><span class="line">        fp.getChildren().addAll(b1,b2,b3,b4,b5,b6);</span><br><span class="line"></span><br><span class="line">        Scene scene = <span class="keyword">new</span> Scene(fp);</span><br><span class="line"></span><br><span class="line">        s.setScene(scene);</span><br><span class="line">        s.setTitle(<span class="string">&quot;javafx&quot;</span>);</span><br><span class="line">        s.setWidth(<span class="number">800</span>);</span><br><span class="line">        s.setHeight(<span class="number">600</span>);</span><br><span class="line">        s.show();</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p> <strong>GridPane    网格布局</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> javafx.application.Application;</span><br><span class="line"><span class="keyword">import</span> javafx.geometry.Insets;</span><br><span class="line"><span class="keyword">import</span> javafx.geometry.Pos;</span><br><span class="line"><span class="keyword">import</span> javafx.scene.Scene;</span><br><span class="line"><span class="keyword">import</span> javafx.scene.control.Button;</span><br><span class="line"><span class="keyword">import</span> javafx.scene.layout.ColumnConstraints;</span><br><span class="line"><span class="keyword">import</span> javafx.scene.layout.GridPane;</span><br><span class="line"><span class="keyword">import</span> javafx.scene.layout.RowConstraints;</span><br><span class="line"><span class="keyword">import</span> javafx.stage.Stage;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Main4</span> <span class="keyword">extends</span> <span class="title">Application</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        launch(args);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">start</span><span class="params">(Stage s)</span></span>&#123;</span><br><span class="line"></span><br><span class="line">        Button b1 = <span class="keyword">new</span> Button(<span class="string">&quot;button1&quot;</span>);</span><br><span class="line">        Button b2 = <span class="keyword">new</span> Button(<span class="string">&quot;button2&quot;</span>);</span><br><span class="line">        Button b3 = <span class="keyword">new</span> Button(<span class="string">&quot;button3&quot;</span>);</span><br><span class="line">        Button b4 = <span class="keyword">new</span> Button(<span class="string">&quot;button4&quot;</span>);</span><br><span class="line">        Button b5 = <span class="keyword">new</span> Button(<span class="string">&quot;button5&quot;</span>);</span><br><span class="line">        Button b6 = <span class="keyword">new</span> Button(<span class="string">&quot;button6&quot;</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">//        网格布局</span></span><br><span class="line">        GridPane gp = <span class="keyword">new</span> GridPane();</span><br><span class="line">        gp.setStyle(<span class="string">&quot;-fx-background-color: #567;&quot;</span>);</span><br><span class="line"><span class="comment">//        第一种添加节点的方法,设置组件在GridPane布局的第几列,第几行</span></span><br><span class="line"><span class="comment">//        gp.add(b1,0,0);</span></span><br><span class="line">        gp.add(b2,<span class="number">1</span>,<span class="number">0</span>);</span><br><span class="line">        gp.add(b3,<span class="number">2</span>,<span class="number">0</span>);</span><br><span class="line">        gp.add(b4,<span class="number">3</span>,<span class="number">0</span>);</span><br><span class="line">        gp.add(b5,<span class="number">0</span>,<span class="number">1</span>);</span><br><span class="line">        gp.add(b6,<span class="number">1</span>,<span class="number">1</span>);</span><br><span class="line"><span class="comment">//        水平跟垂直间距</span></span><br><span class="line">        gp.setHgap(<span class="number">10</span>);</span><br><span class="line">        gp.setVgap(<span class="number">10</span>);</span><br><span class="line"><span class="comment">//        padding</span></span><br><span class="line">        gp.setPadding(<span class="keyword">new</span> Insets(<span class="number">10</span>));</span><br><span class="line"></span><br><span class="line">        GridPane.setMargin(b1,<span class="keyword">new</span> Insets(<span class="number">10</span>));<span class="comment">//设置某个子组件的margin</span></span><br><span class="line"></span><br><span class="line">        gp.setAlignment(Pos.CENTER);<span class="comment">//子组件对齐方式</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//        第二种添加节点的方法</span></span><br><span class="line"><span class="comment">//        GridPane.setConstraints(b1,2,1);</span></span><br><span class="line"><span class="comment">//        gp.getChildren().add(b1);</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//        第三种添加节点的方法</span></span><br><span class="line">        GridPane.setRowIndex(b1,<span class="number">1</span>);<span class="comment">//行</span></span><br><span class="line">        GridPane.setColumnIndex(b1,<span class="number">2</span>);<span class="comment">//列</span></span><br><span class="line">        gp.getChildren().add(b1);</span><br><span class="line"></span><br><span class="line"><span class="comment">//        设置第一列间距</span></span><br><span class="line">        gp.getColumnConstraints().add(<span class="keyword">new</span> ColumnConstraints(<span class="number">100</span>));</span><br><span class="line"><span class="comment">//        设置第一行间距</span></span><br><span class="line">        gp.getRowConstraints().add(<span class="keyword">new</span> RowConstraints(<span class="number">100</span>));</span><br><span class="line"></span><br><span class="line">        Scene scene = <span class="keyword">new</span> Scene(gp);</span><br><span class="line">        s.setScene(scene);</span><br><span class="line">        s.setTitle(<span class="string">&quot;javafx&quot;</span>);</span><br><span class="line">        s.setWidth(<span class="number">800</span>);</span><br><span class="line">        s.setHeight(<span class="number">600</span>);</span><br><span class="line">        s.show();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+        </div>
+
+        
+            <div class="post-copyright-info">
+                <div class="article-copyright-info-container">
+    <ul>
+        <li>本文标题：JavaFX学习之布局一</li>
+        <li>本文作者：Da</li>
+        <li>创建时间：2021-05-22 19:12:01</li>
+        <li>
+            本文链接：https://da9527.gitee.io/2021/05/22/JavaFX学习之布局一/
+        </li>
+        <li>
+            版权声明：本博客所有文章除特别声明外，均采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> 许可协议。转载请注明出处！
+        </li>
+    </ul>
+</div>
+
+            </div>
+        
+
+        
+            <div class="article-nav">
+                
+                    <div class="article-prev">
+                        <a class="prev"
+                           rel="prev"
+                           href="/2021/05/22/JavaFX%E5%AD%A6%E4%B9%A0%E4%B9%8B%E5%B8%83%E5%B1%80%E4%BA%8C/"
+                        >
+                            <span class="left arrow-icon flex-center">
+                              <i class="fas fa-chevron-left"></i>
+                            </span>
+                            <span class="title flex-center">
+                                <span class="post-nav-title-item">JavaFX学习之布局二</span>
+                                <span class="post-nav-item">上一篇</span>
+                            </span>
+                        </a>
+                    </div>
+                
+                
+                    <div class="article-next">
+                        <a class="next"
+                           rel="next"
+                           href="/2021/05/22/JavaFX%E5%AD%A6%E4%B9%A0%E4%B9%8B%E6%96%87%E6%9C%AC%E6%A1%86%E5%AF%86%E7%A0%81%E6%A1%86%E5%92%8CLabel%E6%A0%87%E7%AD%BE/"
+                        >
+                            <span class="title flex-center">
+                                <span class="post-nav-title-item">JavaFX学习之文本框密码框和Label标签</span>
+                                <span class="post-nav-item">下一篇</span>
+                            </span>
+                            <span class="right arrow-icon flex-center">
+                              <i class="fas fa-chevron-right"></i>
+                            </span>
+                        </a>
+                    </div>
+                
+            </div>
+        
+
+        
+    </div>
+</div>
+
+
+                
+            </div>
+
+        </div>
+
+        <div class="page-main-content-bottom">
+            <footer class="footer">
+    <div class="info-container">
+        <div class="copyright-info info-item">
+            &copy;
+            
+              <span>2020</span>&nbsp;-&nbsp;
+            
+            2021&nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;<a href="/">Da</a>
+        </div>
+        
+            <script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+            <div class="website-count info-item">
+                
+                    <span id="busuanzi_container_site_uv">
+                        访问人数&nbsp;<span id="busuanzi_value_site_uv"></span>&ensp;
+                    </span>
+                
+                
+                    <span id="busuanzi_container_site_pv">
+                        总访问量&nbsp;<span id="busuanzi_value_site_pv"></span>
+                    </span>
+                
+            </div>
+        
+        <div class="theme-info info-item">
+            由 <a target="_blank" href="https://hexo.io">Hexo</a> 驱动&nbsp;|&nbsp;主题&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.4.2</a>
+        </div>
+        
+    </div>
+</footer>
+
+        </div>
+    </div>
+
+    
+        <div class="post-tools">
+            <div class="post-tools-container">
+    <ul class="tools-list">
+        <!-- TOC aside toggle -->
+        
+            <li class="tools-item page-aside-toggle">
+                <i class="fas fa-outdent"></i>
+            </li>
+        
+
+        <!-- go comment -->
+        
+    </ul>
+</div>
+
+        </div>
+    
+
+    <div class="right-bottom-side-tools">
+        <div class="side-tools-container">
+    <ul class="side-tools-list">
+        <li class="tools-item tool-font-adjust-plus flex-center">
+            <i class="fas fa-search-plus"></i>
+        </li>
+
+        <li class="tools-item tool-font-adjust-minus flex-center">
+            <i class="fas fa-search-minus"></i>
+        </li>
+
+        <li class="tools-item tool-expand-width flex-center">
+            <i class="fas fa-arrows-alt-h"></i>
+        </li>
+
+        <li class="tools-item tool-dark-light-toggle flex-center">
+            <i class="fas fa-moon"></i>
+        </li>
+
+        <!-- rss -->
+        
+
+        
+            <li class="tools-item tool-scroll-to-top flex-center">
+                <i class="fas fa-arrow-up"></i>
+            </li>
+        
+
+        <li class="tools-item tool-scroll-to-bottom flex-center">
+            <i class="fas fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="exposed-tools-list">
+        <li class="tools-item tool-toggle-show flex-center">
+            <i class="fas fa-cog fa-spin"></i>
+        </li>
+        
+    </ul>
+</div>
+
+    </div>
+
+    
+        <aside class="page-aside">
+            <div class="post-toc-wrap">
+    <div class="post-toc">
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#JavaFX%E7%9A%84%E7%AC%AC%E4%B9%9D%E6%AC%A1%E6%8E%A5%E8%A7%A6"><span class="nav-text">JavaFX的第九次接触</span></a></li></ol>
+    </div>
+</div>
+        </aside>
+    
+
+    <div class="image-viewer-container">
+    <img src="">
+</div>
+
+
+    
+        <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+          <span class="search-input-field-pre">
+            <i class="fas fa-keyboard"></i>
+          </span>
+            <div class="search-input-container">
+                <input autocomplete="off"
+                       autocorrect="off"
+                       autocapitalize="off"
+                       placeholder="搜索..."
+                       spellcheck="false"
+                       type="search"
+                       class="search-input"
+                >
+            </div>
+            <span class="popup-btn-close">
+                <i class="fas fa-times"></i>
+            </span>
+        </div>
+        <div id="search-result">
+            <div id="no-result">
+                <i class="fas fa-spinner fa-pulse fa-5x fa-fw"></i>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+
+</main>
+
+
+
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/main.js"></script>
+
+<script src="/js/header-shrink.js"></script>
+
+<script src="/js/back2top.js"></script>
+
+<script src="/js/dark-light-toggle.js"></script>
+
+
+
+    
+<script src="/js/local-search.js"></script>
+
+
+
+
+    
+<script src="/js/code-copy.js"></script>
+
+
+
+
+    
+<script src="/js/lazyload.js"></script>
+
+
+
+<div class="post-scripts pjax">
+    
+        
+<script src="/js/left-side-toggle.js"></script>
+
+<script src="/js/libs/anime.min.js"></script>
+
+<script src="/js/toc.js"></script>
+
+    
+</div>
+
+
+    
+<script src="/js/libs/pjax.min.js"></script>
+
+<script>
+    window.addEventListener('DOMContentLoaded', () => {
+        const pjax = new Pjax({
+            selectors: [
+                'head title',
+                '.page-container',
+                '.pjax'
+            ],
+            history: true,
+            debug: false,
+            cacheBust: false,
+            timeout: 0,
+            analytics: false,
+            currentUrlFullReload: false,
+            scrollRestoration: false,
+            // scrollTo: true,
+        });
+
+        document.addEventListener('pjax:send', () => {
+            KEEP.utils.pjaxProgressBarStart();
+        });
+
+        document.addEventListener('pjax:complete', () => {
+            KEEP.utils.pjaxProgressBarEnd();
+            pjax.executeScripts(document.querySelectorAll('script[data-pjax], .pjax script'));
+            KEEP.refresh();
+        });
+    });
+</script>
+
+
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/shizuku.model.json"},"display":{"position":"left","width":120,"height":240},"mobile":{"show":false},"log":false});</script></body>
+</html>
