@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="keywords" content="Hexo Theme Keep">
+    <meta name="description" content="Hexo Theme Keep">
+    <meta name="author" content="Da">
+    
+    <title>
+        
+            JavaFX学习之菜单栏补充 |
+        
+        Da的个人博客
+    </title>
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <link rel="shortcut icon" href="/images/logo.svg">
+    
+<link rel="stylesheet" href="/css/font-awesome.min.css">
+
+    <script id="hexo-configurations">
+    let KEEP = window.KEEP || {};
+    KEEP.hexo_config = {"hostname":"da9527.gitee.io","root":"/","language":"zh-CN","path":"search.json"};
+    KEEP.theme_config = {"toc":{"enable":true,"number":false,"expand_all":false,"init_open":false},"style":{"primary_color":"#CC0000","avatar":"/images/avatar.svg","favicon":"/images/logo.svg","article_img_align":"left","left_side_width":"260px","content_max_width":"920px","hover":{"shadow":true,"scale":true},"first_screen":{"enable":true,"background_img":"/images/bg.svg","description":"我不怕千万人阻挡,只怕自己投降"},"scroll":{"progress_bar":{"enable":false},"percent":{"enable":false}}},"local_search":{"enable":true,"preload":false},"code_copy":{"enable":true,"style":"default"},"pjax":{"enable":true},"lazyload":{"enable":true},"version":"3.4.2"};
+    KEEP.language_ago = {"second":"%s 秒前","minute":"%s 分钟前","hour":"%s 小时前","day":"%s 天前","week":"%s 周前","month":"%s 月前","year":"%s 年前"};
+  </script>
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+
+<body>
+<div class="progress-bar-container">
+    
+
+    
+        <span class="pjax-progress-bar"></span>
+        <span class="pjax-progress-icon">
+            <i class="fas fa-circle-notch fa-spin"></i>
+        </span>
+    
+</div>
+
+
+<main class="page-container">
+
+    
+
+    <div class="page-main-content">
+
+        <div class="page-main-content-top">
+            <header class="header-wrapper">
+
+    <div class="header-content">
+        <div class="left">
+            <a class="logo-title" href="/">
+                Da的个人博客
+            </a>
+        </div>
+
+        <div class="right">
+            <div class="pc">
+                <ul class="menu-list">
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/"
+                            >
+                                首页
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/archives"
+                            >
+                                归档
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/about"
+                            >
+                                关于
+                            </a>
+                        </li>
+                    
+                    
+                        <li class="menu-item search search-popup-trigger">
+                            <i class="fas fa-search"></i>
+                        </li>
+                    
+                </ul>
+            </div>
+            <div class="mobile">
+                
+                    <div class="icon-item search search-popup-trigger"><i class="fas fa-search"></i></div>
+                
+                <div class="icon-item menu-bar">
+                    <div class="menu-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="header-drawer">
+        <ul class="drawer-menu-list">
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/">首页</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/archives">归档</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/about">关于</a>
+                </li>
+            
+        </ul>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="page-main-content-middle">
+
+            <div class="main-content">
+
+                
+                    <div class="fade-in-down-animation">
+    <div class="article-content-container">
+
+        <div class="article-title">
+            <span class="title-hover-animation">JavaFX学习之菜单栏补充</span>
+        </div>
+
+        
+            <div class="article-header">
+                <div class="avatar">
+                    <img src="/images/avatar.svg">
+                </div>
+                <div class="info">
+                    <div class="author">
+                        <span class="name">Da</span>
+                        
+                            <span class="author-label">Lv4</span>
+                        
+                    </div>
+                    <div class="meta-info">
+                        <div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        <i class="fas fa-edit"></i>&nbsp;2021-05-23 12:17:18
+    </span>
+    
+    
+
+    
+    
+        <span class="article-wordcount article-meta-item">
+            <i class="fas fa-file-word"></i>&nbsp;<span>707 字</span>
+        </span>
+    
+    
+        <span class="article-min2read article-meta-item">
+            <i class="fas fa-clock"></i>&nbsp;<span>3 分钟</span>
+        </span>
+    
+    
+        <span class="article-pv article-meta-item">
+            <i class="fas fa-eye"></i>&nbsp;<span id="busuanzi_value_page_pv"></span>
+        </span>
+    
+</div>
+
+                    </div>
+                </div>
+            </div>
+        
+
+        <div class="article-content markdown-body">
+            <h1 id="JavaFX的第十四次接触"><a href="#JavaFX的第十四次接触" class="headerlink" title="JavaFX的第十四次接触"></a>JavaFX的第十四次接触</h1><blockquote>
+<p> CustomMenuItem自定义菜单选项</p>
+<p> MenuButton选项按钮</p>
+<p>  SplitMenuButton选项按钮</p>
+<p>  设置右键菜单</p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> javafx.application.Application;</span><br><span class="line"><span class="keyword">import</span> javafx.event.Event;</span><br><span class="line"><span class="keyword">import</span> javafx.event.EventHandler;</span><br><span class="line"><span class="keyword">import</span> javafx.geometry.Pos;</span><br><span class="line"><span class="keyword">import</span> javafx.scene.Scene;</span><br><span class="line"><span class="keyword">import</span> javafx.scene.control.*;</span><br><span class="line"><span class="keyword">import</span> javafx.scene.input.ContextMenuEvent;</span><br><span class="line"><span class="keyword">import</span> javafx.scene.input.KeyCombination;</span><br><span class="line"><span class="keyword">import</span> javafx.scene.layout.AnchorPane;</span><br><span class="line"><span class="keyword">import</span> javafx.scene.layout.VBox;</span><br><span class="line"><span class="keyword">import</span> javafx.stage.Stage;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Main</span> <span class="keyword">extends</span> <span class="title">Application</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        launch(args);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">start</span><span class="params">(Stage primaryStage)</span> <span class="keyword">throws</span> Exception </span>&#123;</span><br><span class="line">        AnchorPane ap = <span class="keyword">new</span> AnchorPane();</span><br><span class="line">        ap.setStyle(<span class="string">&quot;-fx-background-color: #567;&quot;</span>);</span><br><span class="line"></span><br><span class="line">        MenuBar bar = <span class="keyword">new</span> MenuBar();</span><br><span class="line"></span><br><span class="line">        Menu menu1 = <span class="keyword">new</span> Menu(<span class="string">&quot;菜单1&quot;</span>);</span><br><span class="line">        Menu menu2 = <span class="keyword">new</span> Menu(<span class="string">&quot;菜单2&quot;</span>);</span><br><span class="line">        Menu menu3 = <span class="keyword">new</span> Menu(<span class="string">&quot;菜单3&quot;</span>);</span><br><span class="line"></span><br><span class="line">        MenuItem menuItem1 = <span class="keyword">new</span> MenuItem(<span class="string">&quot;子菜单1&quot;</span>);</span><br><span class="line">        MenuItem menuItem2 = <span class="keyword">new</span> MenuItem(<span class="string">&quot;子菜单2&quot;</span>);</span><br><span class="line">        MenuItem menuItem3 = <span class="keyword">new</span> MenuItem(<span class="string">&quot;子菜单3&quot;</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">//        CustomMenuItem自定义菜单选项</span></span><br><span class="line">        CustomMenuItem cmi1 = <span class="keyword">new</span> CustomMenuItem();</span><br><span class="line">        cmi1.setContent(<span class="keyword">new</span> Button(<span class="string">&quot;CustomMenuItem自定义菜单&quot;</span>));</span><br><span class="line"></span><br><span class="line">        CustomMenuItem cmi2 = <span class="keyword">new</span> CustomMenuItem();</span><br><span class="line">        cmi2.setContent(<span class="keyword">new</span> ProgressBar(<span class="number">0.5</span>));<span class="comment">//自定义进度条</span></span><br><span class="line"></span><br><span class="line">        CustomMenuItem cmi3 = <span class="keyword">new</span> CustomMenuItem();</span><br><span class="line">        VBox box = <span class="keyword">new</span> VBox();</span><br><span class="line">        box.setStyle(<span class="string">&quot;-fx-background-color: #8e44ad;&quot;</span>);</span><br><span class="line">        box.setPrefWidth(<span class="number">100</span>);</span><br><span class="line">        box.setPrefHeight(<span class="number">100</span>);</span><br><span class="line">        box.getChildren().add(<span class="keyword">new</span> ProgressBar(<span class="number">1</span>));</span><br><span class="line">        box.setAlignment(Pos.CENTER);</span><br><span class="line">        cmi3.setContent(box);<span class="comment">//自定义布局</span></span><br><span class="line"></span><br><span class="line">        menu1.getItems().addAll(menuItem1, menuItem2, menuItem3, cmi1, cmi2, cmi3);</span><br><span class="line"></span><br><span class="line">        bar.getMenus().addAll(menu1, menu2, menu3);</span><br><span class="line"></span><br><span class="line"><span class="comment">//        MenuButton选项按钮,跟菜单栏基本一样的操作</span></span><br><span class="line">        MenuButton mb = <span class="keyword">new</span> MenuButton(<span class="string">&quot;选项按钮&quot;</span>);</span><br><span class="line">        mb.setMinWidth(<span class="number">200</span>);</span><br><span class="line">        mb.setMaxHeight(<span class="number">50</span>);</span><br><span class="line">        AnchorPane.setTopAnchor(mb, <span class="number">200.0</span>);</span><br><span class="line">        AnchorPane.setLeftAnchor(mb, <span class="number">100.0</span>);</span><br><span class="line">        MenuItem menuItem4 = <span class="keyword">new</span> MenuItem(<span class="string">&quot;menuItem4&quot;</span>);</span><br><span class="line">        MenuItem menuItem5 = <span class="keyword">new</span> MenuItem(<span class="string">&quot;menuItem5&quot;</span>);</span><br><span class="line">        MenuItem menuItem6 = <span class="keyword">new</span> MenuItem(<span class="string">&quot;menuItem6&quot;</span>);</span><br><span class="line">        CustomMenuItem cmi4 = <span class="keyword">new</span> CustomMenuItem();</span><br><span class="line">        cmi4.setContent(box);</span><br><span class="line">        mb.getItems().addAll(menuItem4, menuItem5, menuItem6, cmi4);<span class="comment">//添加子项菜单</span></span><br><span class="line"><span class="comment">//        按钮监听</span></span><br><span class="line">        menuItem4.setOnAction(e -&gt; System.out.println(<span class="string">&quot;menuItem4点击了...&quot;</span>));</span><br><span class="line">        menuItem4.setAccelerator(KeyCombination.valueOf(<span class="string">&quot;alt+k&quot;</span>));<span class="comment">//绑定快捷键</span></span><br><span class="line"><span class="comment">//        快捷键会触发点击事件和下面的处理快捷键的事件,不想写点击事件只想用快捷键可以使用下面的方法</span></span><br><span class="line">        menuItem4.setOnMenuValidation(<span class="keyword">new</span> EventHandler&lt;Event&gt;() &#123;</span><br><span class="line">            <span class="meta">@Override</span></span><br><span class="line">            <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">handle</span><span class="params">(Event event)</span> </span>&#123;</span><br><span class="line">                System.out.println(<span class="string">&quot; menuItem4.setOnMenuValidation的事件触发了...&quot;</span>);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">//        SplitMenuButton选项按钮,跟MenuButton、菜单栏基本一样的操作,就是样式不一样,这里就不重复操作了</span></span><br><span class="line">        SplitMenuButton smb = <span class="keyword">new</span> SplitMenuButton();</span><br><span class="line">        smb.setText(<span class="string">&quot;SplitMenuButton选项按钮&quot;</span>);</span><br><span class="line">        AnchorPane.setTopAnchor(smb, <span class="number">300.0</span>);</span><br><span class="line">        AnchorPane.setLeftAnchor(smb, <span class="number">100.0</span>);</span><br><span class="line">        MenuItem menuItem7 = <span class="keyword">new</span> MenuItem(<span class="string">&quot;menuItem7&quot;</span>);</span><br><span class="line">        MenuItem menuItem8 = <span class="keyword">new</span> MenuItem(<span class="string">&quot;menuItem8&quot;</span>);</span><br><span class="line">        MenuItem menuItem9 = <span class="keyword">new</span> MenuItem(<span class="string">&quot;menuItem9&quot;</span>);</span><br><span class="line">        smb.getItems().addAll(menuItem7, menuItem8, menuItem9);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        Button button = <span class="keyword">new</span> Button(<span class="string">&quot;鼠标右键点我&quot;</span>);</span><br><span class="line">        AnchorPane.setBottomAnchor(button, <span class="number">100.0</span>);</span><br><span class="line">        AnchorPane.setLeftAnchor(button, <span class="number">100.0</span>);</span><br><span class="line"><span class="comment">//        设置右键菜单</span></span><br><span class="line">        ContextMenu cm = <span class="keyword">new</span> ContextMenu();</span><br><span class="line">        MenuItem cmI1 = <span class="keyword">new</span> MenuItem(<span class="string">&quot;右键菜单1&quot;</span>);</span><br><span class="line">        MenuItem cmI2 = <span class="keyword">new</span> MenuItem(<span class="string">&quot;右键菜单2&quot;</span>);</span><br><span class="line">        MenuItem cmI3 = <span class="keyword">new</span> MenuItem(<span class="string">&quot;右键菜单3&quot;</span>);</span><br><span class="line">        cm.getItems().addAll(cmI1, cmI2, cmI3);</span><br><span class="line"><span class="comment">//        绑定按钮的右击</span></span><br><span class="line">        button.setContextMenu(cm);</span><br><span class="line"><span class="comment">//        监听右键菜单显示事件</span></span><br><span class="line">        button.setOnContextMenuRequested(<span class="keyword">new</span> EventHandler&lt;ContextMenuEvent&gt;() &#123;</span><br><span class="line">            <span class="meta">@Override</span></span><br><span class="line">            <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">handle</span><span class="params">(ContextMenuEvent event)</span> </span>&#123;</span><br><span class="line">                System.out.println(<span class="string">&quot;打开右键菜单了...&quot;</span>);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        ap.getChildren().addAll(bar, mb, smb, button);</span><br><span class="line">        primaryStage.setScene(<span class="keyword">new</span> Scene(ap));</span><br><span class="line">        primaryStage.setTitle(<span class="string">&quot;javafx&quot;</span>);</span><br><span class="line">        primaryStage.setWidth(<span class="number">800</span>);</span><br><span class="line">        primaryStage.setHeight(<span class="number">600</span>);</span><br><span class="line">        primaryStage.show();</span><br><span class="line">        bar.setPrefWidth(ap.getWidth());</span><br><span class="line">        ap.heightProperty().addListener((o, oldV, newV) -&gt; &#123;</span><br><span class="line">            bar.setPrefWidth(newV.doubleValue());</span><br><span class="line">        &#125;);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+        </div>
+
+        
+            <div class="post-copyright-info">
+                <div class="article-copyright-info-container">
+    <ul>
+        <li>本文标题：JavaFX学习之菜单栏补充</li>
+        <li>本文作者：Da</li>
+        <li>创建时间：2021-05-23 12:17:18</li>
+        <li>
+            本文链接：https://da9527.gitee.io/2021/05/23/JavaFX学习之菜单栏补充/
+        </li>
+        <li>
+            版权声明：本博客所有文章除特别声明外，均采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> 许可协议。转载请注明出处！
+        </li>
+    </ul>
+</div>
+
+            </div>
+        
+
+        
+            <div class="article-nav">
+                
+                
+                    <div class="article-next">
+                        <a class="next"
+                           rel="next"
+                           href="/2021/05/23/JavaFX%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%8F%9C%E5%8D%95%E6%A0%8F%E3%80%81%E8%8F%9C%E5%8D%95%E6%A0%8F%E9%80%89%E9%A1%B9%E7%AD%89/"
+                        >
+                            <span class="title flex-center">
+                                <span class="post-nav-title-item">JavaFX学习之菜单栏、菜单栏选项等</span>
+                                <span class="post-nav-item">下一篇</span>
+                            </span>
+                            <span class="right arrow-icon flex-center">
+                              <i class="fas fa-chevron-right"></i>
+                            </span>
+                        </a>
+                    </div>
+                
+            </div>
+        
+
+        
+    </div>
+</div>
+
+
+                
+            </div>
+
+        </div>
+
+        <div class="page-main-content-bottom">
+            <footer class="footer">
+    <div class="info-container">
+        <div class="copyright-info info-item">
+            &copy;
+            
+              <span>2020</span>&nbsp;-&nbsp;
+            
+            2021&nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;<a href="/">Da</a>
+        </div>
+        
+            <script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+            <div class="website-count info-item">
+                
+                    <span id="busuanzi_container_site_uv">
+                        访问人数&nbsp;<span id="busuanzi_value_site_uv"></span>&ensp;
+                    </span>
+                
+                
+                    <span id="busuanzi_container_site_pv">
+                        总访问量&nbsp;<span id="busuanzi_value_site_pv"></span>
+                    </span>
+                
+            </div>
+        
+        <div class="theme-info info-item">
+            由 <a target="_blank" href="https://hexo.io">Hexo</a> 驱动&nbsp;|&nbsp;主题&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.4.2</a>
+        </div>
+        
+    </div>
+</footer>
+
+        </div>
+    </div>
+
+    
+        <div class="post-tools">
+            <div class="post-tools-container">
+    <ul class="tools-list">
+        <!-- TOC aside toggle -->
+        
+            <li class="tools-item page-aside-toggle">
+                <i class="fas fa-outdent"></i>
+            </li>
+        
+
+        <!-- go comment -->
+        
+    </ul>
+</div>
+
+        </div>
+    
+
+    <div class="right-bottom-side-tools">
+        <div class="side-tools-container">
+    <ul class="side-tools-list">
+        <li class="tools-item tool-font-adjust-plus flex-center">
+            <i class="fas fa-search-plus"></i>
+        </li>
+
+        <li class="tools-item tool-font-adjust-minus flex-center">
+            <i class="fas fa-search-minus"></i>
+        </li>
+
+        <li class="tools-item tool-expand-width flex-center">
+            <i class="fas fa-arrows-alt-h"></i>
+        </li>
+
+        <li class="tools-item tool-dark-light-toggle flex-center">
+            <i class="fas fa-moon"></i>
+        </li>
+
+        <!-- rss -->
+        
+
+        
+            <li class="tools-item tool-scroll-to-top flex-center">
+                <i class="fas fa-arrow-up"></i>
+            </li>
+        
+
+        <li class="tools-item tool-scroll-to-bottom flex-center">
+            <i class="fas fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="exposed-tools-list">
+        <li class="tools-item tool-toggle-show flex-center">
+            <i class="fas fa-cog fa-spin"></i>
+        </li>
+        
+    </ul>
+</div>
+
+    </div>
+
+    
+        <aside class="page-aside">
+            <div class="post-toc-wrap">
+    <div class="post-toc">
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#JavaFX%E7%9A%84%E7%AC%AC%E5%8D%81%E5%9B%9B%E6%AC%A1%E6%8E%A5%E8%A7%A6"><span class="nav-text">JavaFX的第十四次接触</span></a></li></ol>
+    </div>
+</div>
+        </aside>
+    
+
+    <div class="image-viewer-container">
+    <img src="">
+</div>
+
+
+    
+        <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+          <span class="search-input-field-pre">
+            <i class="fas fa-keyboard"></i>
+          </span>
+            <div class="search-input-container">
+                <input autocomplete="off"
+                       autocorrect="off"
+                       autocapitalize="off"
+                       placeholder="搜索..."
+                       spellcheck="false"
+                       type="search"
+                       class="search-input"
+                >
+            </div>
+            <span class="popup-btn-close">
+                <i class="fas fa-times"></i>
+            </span>
+        </div>
+        <div id="search-result">
+            <div id="no-result">
+                <i class="fas fa-spinner fa-pulse fa-5x fa-fw"></i>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+
+</main>
+
+
+
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/main.js"></script>
+
+<script src="/js/header-shrink.js"></script>
+
+<script src="/js/back2top.js"></script>
+
+<script src="/js/dark-light-toggle.js"></script>
+
+
+
+    
+<script src="/js/local-search.js"></script>
+
+
+
+
+    
+<script src="/js/code-copy.js"></script>
+
+
+
+
+    
+<script src="/js/lazyload.js"></script>
+
+
+
+<div class="post-scripts pjax">
+    
+        
+<script src="/js/left-side-toggle.js"></script>
+
+<script src="/js/libs/anime.min.js"></script>
+
+<script src="/js/toc.js"></script>
+
+    
+</div>
+
+
+    
+<script src="/js/libs/pjax.min.js"></script>
+
+<script>
+    window.addEventListener('DOMContentLoaded', () => {
+        const pjax = new Pjax({
+            selectors: [
+                'head title',
+                '.page-container',
+                '.pjax'
+            ],
+            history: true,
+            debug: false,
+            cacheBust: false,
+            timeout: 0,
+            analytics: false,
+            currentUrlFullReload: false,
+            scrollRestoration: false,
+            // scrollTo: true,
+        });
+
+        document.addEventListener('pjax:send', () => {
+            KEEP.utils.pjaxProgressBarStart();
+        });
+
+        document.addEventListener('pjax:complete', () => {
+            KEEP.utils.pjaxProgressBarEnd();
+            pjax.executeScripts(document.querySelectorAll('script[data-pjax], .pjax script'));
+            KEEP.refresh();
+        });
+    });
+</script>
+
+
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/shizuku.model.json"},"display":{"position":"left","width":120,"height":240},"mobile":{"show":false},"log":false});</script></body>
+</html>
